@@ -1,34 +1,27 @@
 #include <stdio.h>
-#include <string.h>
 
-int main() {
-    char names1[3][100]; 
-    char names2[3][100]; 
+int main() 
+{
+    int arr[10] = {1, 2, 2, 2, 4, 2, 4, 6, 7, 6}; 
+    int size = 10;
+    int count[10] = {0};
 
-    printf("Please enter any 3 names for the first array:\n");
-    for (int a = 0; a < 3; a++)
-     {
-        printf("Enter name %d: ", a + 1);
-        scanf("%s", names1[a]);
-    }
 
-    
-    for (int a = 0; a < 3; a++) 
+    for (int i = 0; i < size; i++) 
     {
-        strcpy(names2[a], names1[a]);
+        count[arr[i]]++;
     }
 
-    printf("\nArray one Entered Names:\n");
-    for (int b = 0; b < 3; b++) 
+    printf("Duplicate numbers are: ");
+    for (int i = 0; i < 10; i++) 
     {
-        printf("%s\n", names1[b]);
+        if (count[i] > 1)
+        
+         {
+            printf("%d ", i);
+        }
     }
-
-    printf("\nArray two Copy Names:\n");
-    for (int b = 0; b < 3; b++) 
-    {
-        printf("%s\n", names2[b]);
-    }
+    printf("\n");
 
     return 0;
 }
